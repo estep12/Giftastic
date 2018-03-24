@@ -27,8 +27,6 @@ $("#addSport").on("click", function(event){
     sports.push(sportStuff);
     
     renderButton();
-});
-renderButton();
 
 
 
@@ -36,10 +34,14 @@ renderButton();
 
 
 
-var queryURL = "https://api.giphy.com/v1/gifs/search?" + searchTerm + "api_key=vofuJPxsvHdoHwjTlbVIn9Htga3yhsbX";
+
+var queryURL = "https://api.giphy.com/v1/gifs/search?" + sportStuff + "api_key=vofuJPxsvHdoHwjTlbVIn9Htga3yhsbX";
 
 
 $.ajax({
     url: queryURL,
     method: "GET"
 });
+
+});
+renderButton();

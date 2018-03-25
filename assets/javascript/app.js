@@ -28,20 +28,18 @@ $("#addSport").on("click", function(event){
     
     renderButton();
 
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + sportStuff + "&api_key=vofuJPxsvHdoHwjTlbVIn9Htga3yhsbX&limit=10";
 
 
-
-
-
-
-
-var queryURL = "https://api.giphy.com/v1/gifs/search?" + sportStuff + "api_key=vofuJPxsvHdoHwjTlbVIn9Htga3yhsbX";
-
-
-$.ajax({
+    $.ajax({
     url: queryURL,
     method: "GET"
-});
+    }) 
+
+    .then(function(response){
+        var results = response.data;
+        console.log(response)
+    })
 
 });
 renderButton();

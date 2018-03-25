@@ -18,17 +18,12 @@ function renderButton(){
     }
 }
 
-$("#addSport").on("click",  function(event){
 
-    event.preventDefault();
 
-    var sportStuff = $("#sports-input").val().trim();
+function displaySport(){
 
-    sports.push(sportStuff);
-    
-    renderButton();
-
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + sportStuff + "&api_key=vofuJPxsvHdoHwjTlbVIn9Htga3yhsbX&limit=10";
+    var sportz = $(this).attr("data-name");
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + sportz + "&api_key=vofuJPxsvHdoHwjTlbVIn9Htga3yhsbX&limit=10";
 
 
     $.ajax({
@@ -59,9 +54,23 @@ $("#addSport").on("click",  function(event){
 
             }
         }
-    })
+    
 
 
+})
+}
 
-});
+$("#addSport").on("click",  function(event){
+
+    event.preventDefault();
+
+    var sportStuff = $("#sports-input").val().trim();
+
+    sports.push(sportStuff);
+
+    renderButton();
+})
+
+$(document).on("click", ".sport", displaySport);
+
 renderButton();

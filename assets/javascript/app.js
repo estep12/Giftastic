@@ -1,7 +1,7 @@
 
 
 
-var sports = [];
+var sports = ["Kobe Bryant", "Lebron James", "Basketball", "Football"];
 
 function renderButton(){
 
@@ -18,7 +18,7 @@ function renderButton(){
     }
 }
 
-$("#addSport").on("click", function(event){
+$("#addSport").on("click",  function(event){
 
     event.preventDefault();
 
@@ -49,7 +49,7 @@ $("#addSport").on("click", function(event){
 
                 var sportImage = $("<img>");
 
-                sportImage.attr("src", results[j].images.fixed_height.url);
+                sportImage.attr("src", results[j].images.fixed_height_still.url);
 
                 gifDiv.append(para);
                 gifDiv.append(sportImage);
@@ -61,7 +61,7 @@ $("#addSport").on("click", function(event){
         }
     })
 
-    
+
 
 });
 renderButton();

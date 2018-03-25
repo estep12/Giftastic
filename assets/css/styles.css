@@ -1,4 +1,18 @@
+body {
+    background-color: bisque;
+    
+}
+
+#search-row {
+    margin-bottom: 50px;
+}
+
+
 #sports-form{
-    float: right;
+    
     margin-top: 50px;
+}
+
+#addSport {
+    margin-top: 10px;
 }

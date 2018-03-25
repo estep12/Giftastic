@@ -34,12 +34,34 @@ $("#addSport").on("click", function(event){
     $.ajax({
     url: queryURL,
     method: "GET"
-    }) 
+    })
 
     .then(function(response){
         var results = response.data;
         console.log(response)
+        for(let j=0; j<results.length; j++) {
+            if (results[i].rating !== "r"){
+                var gifDiv = $("<div class ='item'>");
+
+                var rating = results[j].rating;
+
+                var para = $("<p>").text("Rating: " + rating);
+
+                var sportImage = $("<img>");
+
+                sportImage.attr("src", results[j].images.fixed_height.url);
+
+                gifDiv.append(para);
+                gifDiv.append(sportImage);
+
+                $("#sportsGifs").prepend(gifDiv);
+
+
+            }
+        }
     })
+
+    
 
 });
 renderButton();

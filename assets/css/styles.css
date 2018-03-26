@@ -17,6 +17,8 @@ body {
 #sports-form{
     
     margin-top: 50px;
+    border: solid;
+    padding: 7px;
 }
 
 #addSport {

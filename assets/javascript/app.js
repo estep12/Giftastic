@@ -44,19 +44,21 @@ function displaySport(){
 
                 var sportImage = $("<img>");
 
-                sportImage.attr("src", results[j].images.fixed_height_still.url);
-
-                gifDiv.append(para);
-                gifDiv.append(sportImage);
+                sportImage.attr("src", results[j].images.fixed_height.url);
+                sportImage.addClass("gif")
+                gifDiv.prepend(para);
+                gifDiv.prepend(sportImage);
 
                 $("#sportsGifs").prepend(gifDiv);
+
+                $(".gif").on("click", function(click){
+                    console.log(click);
+                    
+                })
 
 
             }
         }
-    
-
-
 })
 }
 
@@ -70,6 +72,10 @@ $("#addSport").on("click",  function(event){
 
     renderButton();
 })
+
+ 
+
+
 
 $(document).on("click", ".sport", displaySport);
 

@@ -1,6 +1,12 @@
+header{
+    font-size: 28px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
     background-color: bisque;
-    
+
 }
 
 #search-row {

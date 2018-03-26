@@ -62,7 +62,7 @@ function displaySport(){
                         $(this).attr("src", $(this).attr("data-still"));
                         $(this).attr("data-state", "still");
                     }
-                    
+                    //I can get the state to console log but can't get it to actually animate.
                 })
 
 

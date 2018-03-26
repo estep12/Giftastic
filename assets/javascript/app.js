@@ -44,15 +44,24 @@ function displaySport(){
 
                 var sportImage = $("<img>");
 
-                sportImage.attr("src", results[j].images.fixed_height.url);
+                sportImage.attr("src", results[j].images.fixed_height_still.url);
                 sportImage.addClass("gif")
                 gifDiv.prepend(para);
                 gifDiv.prepend(sportImage);
-
                 $("#sportsGifs").prepend(gifDiv);
+                var stillImage = results[j].images.fixed_height_still.url;
+                var animatedImage = results[j].images.fixed_height.url;
 
-                $(".gif").on("click", function(click){
-                    console.log(click);
+                $(".gif").on("click", function(){
+                    var state = $(this).attr("data-state")
+                    console.log(state);
+                    if(state === "still"){
+                        $(this).attr("src", $(this).attr("data-animate"));
+                        $(this).attr("data-state", "animate");
+                    } else {
+                        $(this).attr("src", $(this).attr("data-still"));
+                        $(this).attr("data-state", "still");
+                    }
                     
                 })
 
